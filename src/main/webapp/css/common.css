@@ -1,0 +1,17 @@
+/*
+ * 固定元素的宽度和居中
+ */
+.w{
+	width: 1170px;
+	margin: 0 auto;
+}
+
+/*
+ * 解决高度塌陷问题clearfix
+ */
+.clearfix:before,
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}

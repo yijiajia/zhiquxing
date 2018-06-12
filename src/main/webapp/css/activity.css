@@ -1,0 +1,173 @@
+body{
+	width: 100%;
+	height: 100%;
+	background-color: #F8FAFC;
+}
+
+.carousel{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	background-color: #bfa;
+}
+
+
+.nav-tab{
+	position: relative;
+    width: 860px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(7, 17, 27, 0.1);
+  	top: -60px;  
+    z-index: 10;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    
+}
+
+
+.nav-tab .nav-item{
+	float: left;
+	text-align: center;
+	/*margin: 27px 0px 27px 80px;*/
+	width: 130px;
+	height: 120px; 
+	/*background-color: black*/
+}
+
+.nav-tab .nav-item .nav-icon{
+	display: block;
+	width: 50px;
+	height: 50px;
+	
+	margin: 27px auto 0px auto;
+	
+}
+
+.nav-tab .nav-item .nav-icon.lesson{
+
+	background: url(../iconfont/nav-icon-all.png) no-repeat;
+}
+
+.nav-tab .nav-item .nav-icon.test{
+	background: url(../iconfont/nav-icon-all.png);
+}
+
+.nav-tab .nav-item .nav-icon.vote{
+	background: url(../iconfont/nav-icon-all.png);
+}
+
+.nav-tab .nav-item .nav-icon.hotarea{
+	background: url(../iconfont/nav-icon-all.png);
+}
+
+.nav-tab .nav-item .nav-icon.noname{
+	background: url(../iconfont/nav-icon-all.png);
+}
+
+
+
+
+
+
+.nav-tab .nav-item .nav-text{
+	font-size: 14px;
+    color: #93999f;
+    line-height: 14px;
+    transition: .3s all linear;
+
+    
+    
+}
+
+.nav-tab .nav-item .nav-icon .lesson{
+	
+}
+
+.content{
+	/*display: block;*/
+	/*注意边框的宽度*/
+	width: 1228px;
+	height: auto;
+	/*background-color: greenyellow;*/	
+	margin: 0 auto;
+	/*padding: 0px 60px;*/
+}
+/*
+.content .sort{
+	注意边框的宽度
+	width: 1188px;
+	height: 50px;
+	background-color: #fff;
+	margin: 0 auto 20px auto;
+}*/
+
+.content .list-item{
+	float: left;
+	width: 280px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	background-color: white;
+	border: solid 1px #eeeeee;
+	
+	
+}
+
+.content .list-item:hover{
+	border: 1px solid deepskyblue;
+}
+
+.content .list-item .item-img{
+	width: 280px;
+	height: 280px;
+	cursor: pointer;
+	background-color: #bfa;
+}
+
+.content .list-item .item-text{
+	padding: 0px 10px 20px 10px; 
+}
+
+
+.content .list-item .item-text .item-title{
+	margin-top: 14px;
+	margin-bottom: 14px;
+	font-size: 16px;
+    color: #565656;
+    overflow: hidden;
+    line-height: 1;
+    width: 100%;
+    height: 16px;
+
+}
+
+.content .list-item .item-text .item-desc{
+    /*margin-top: 2px;*/
+    overflow: hidden;
+    font-size: 14px;
+    color: #989898;
+    width: 100%;
+    line-height: 18px;
+    height: 54px;
+}
+ 
+
+.fenye{
+	/*float: left;*/
+	/*position: absolute;*/	
+	margin: 0 auto;
+	width: 400px;
+	height: 50px;
+}
+
+.nav-tab .nav-item:hover,
+.nav-tab .nav-item.on{
+	position: relative;
+	border-bottom: 2px solid #f01414;
+}
+.img-size{
+	width:100%;
+}

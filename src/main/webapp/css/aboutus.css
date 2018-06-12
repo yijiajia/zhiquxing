@@ -1,0 +1,105 @@
+/*整体背景*/
+body{
+	background-color: #F3F5F7;
+}
+
+/*主体宽度*/
+.w{
+	width: 980px;
+	/*height: 2000px;*/
+	margin: 0 auto;
+}
+
+/*banner图片设置*/
+.banner{
+	height: 50px;
+	width: 100%;
+	/*background-color: yellowgreen;*/
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+/*左侧菜单栏*/
+.about_left{
+	width: 25%;
+	float: left;
+}
+
+/*左侧菜单栏列表背景*/
+.about_left ul{
+	background: #fafafa;
+}
+
+/*左侧菜单栏菜单项*/
+.about_left ul li{
+	text-align: center;
+	font-size: 18px;
+	border-bottom: 1px solid #f5f5f5;	
+	height: 60px;		
+	line-height: 60px;	
+								
+}
+
+/*菜单链接设置*/
+.about_left ul li a{
+	text-decoration: none;
+	color: #333;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/*左侧菜单选项*/
+.about_left ul li:hover,
+.about_left ul li.on,
+.about_left ul li:active{
+	border-left: 2px solid #00a185;
+	background-color: #fff;
+}
+
+
+/*右侧主体设置*/
+.about_right{
+	width: 75%;
+	height: auto;
+	float: right;
+	background-color: #fff;				
+}
+
+/*右侧内容框*/
+.about_right_content{
+	width: 100%;
+	background: #FFF;
+	padding: 20px 30px 20px 30px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+/*右侧内容标题设置*/
+.about_right_content h1{
+	box-sizing: border-box;
+	margin-bottom: 30px;
+	border-bottom: 2px solid #00a185;
+	width: 97px;
+	text-align: center;
+	padding-bottom: 10px;
+	font-size: 16px;
+}
+
+/*右侧内容正文段落*/
+.about_right_content p{
+	margin-bottom: 30px;
+	color: #666;
+	line-height: 25px;
+	font-size: 14px;
+}
+
+/*右侧内容框默认隐藏*/
+.about_right_content div{
+	display: none;
+}
+
+/*含有类show的内容框显示*/
+.about_right_content div.show{
+	display: block;
+}

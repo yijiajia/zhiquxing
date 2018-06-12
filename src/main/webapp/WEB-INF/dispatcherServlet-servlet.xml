@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <!--SpringMVC的配置文件，包含网站跳转逻辑的控制，配置  -->
+    <context:component-scan base-package="cn.edu.gpnu" use-default-filters="false">
+        <!--只扫描控制器。  -->
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+
+    <!-- spring mvc 对json的支持-->
+    <!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <!--json转换器-->
+                <ref bean="mappingJacksonHttpMessageConverter" />
+            </list>
+        </property>
+    </bean>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="mappingJacksonHttpMessageConverter" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="mappingJacksonHttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name = "supportedMediaTypes">
+            <list>
+                <bean class="org.springframework.http.MediaType">
+                    <constructor-arg index="0" value="text"/>
+                    <constructor-arg index="1" value="plain"/>
+                    <constructor-arg index="2" value="UTF-8"/>
+                </bean>
+                <bean class="org.springframework.http.MediaType">
+                    <constructor-arg index="0" value="*"/>
+                    <constructor-arg index="1" value="*"/>
+                    <constructor-arg index="2" value="UTF-8"/>
+                </bean>
+                <bean class="org.springframework.http.MediaType">
+                    <constructor-arg index="0" value="text"/>
+                    <constructor-arg index="1" value="*"/>
+                    <constructor-arg index="2" value="UTF-8"/>
+                </bean>
+                <bean class="org.springframework.http.MediaType">
+                    <constructor-arg index="0" value="application"/>
+                    <constructor-arg index="1" value="json"/>
+                    <constructor-arg index="2" value="UTF-8"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <mvc:resources mapping="/assets/**" location="/assets/"/>
+    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/fonts/**" location="/fonts/"/>
+    <mvc:resources mapping="/iconfont/**" location="/iconfont/"/>
+    <mvc:resources mapping="/img/**" location="/img/"/>
+    <mvc:resources mapping="/js/**" location="/js/"/>
+    <mvc:resources mapping="/layui/**" location="/layui/"/>
+    <mvc:resources mapping="/video/**" location="/video/"/>
+
+    <!--配置视图解析器，方便页面返回  -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <!--两个标准配置  -->
+    <!-- 将springmvc不能处理的请求交给tomcat -->
+    <mvc:default-servlet-handler/>
+    <!-- 能支持springmvc更高级的一些功能，JSR303校验，快捷的ajax...映射动态请求 -->
+    <mvc:annotation-driven/>
+
+</beans>

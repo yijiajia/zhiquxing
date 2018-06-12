@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.gpnu.dao.CourseCommentMapper">
+    <!--courseCommentCustom -->
+    <resultMap id="BaseResultMapCourseComment" type="cn.edu.gpnu.bean.custom.CourseCommentCustom">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="comment" jdbcType="VARCHAR" property="comment" />
+        <result column="praise_num" jdbcType="VARCHAR" property="praiseNum" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="user_Id" jdbcType="INTEGER" property="userId"/>
+        <result column="course_Id" jdbcType="INTEGER" property="courseId"/>
+    </resultMap>
+    <!--userCustom-->
+    <resultMap id="BaseResultMapUser" type="cn.edu.gpnu.bean.custom.UserCustom">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+        <result column="address" jdbcType="VARCHAR" property="address" />
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+    </resultMap>
+
+    <resultMap id="courseCommentVo" type="cn.edu.gpnu.vo.CourseCommentVo">
+            <association property="courseCommentCustom" resultMap="BaseResultMapCourseComment"/>
+            <association property="userCustom" resultMap="BaseResultMapUser"/>
+    </resultMap>
+
+    <select id="getCourseCommentByCourseId" parameterType="java.lang.Integer" resultMap="courseCommentVo">
+       SELECT cm.id,cm.comment,cm.praise_num,cm.course_Id,cm.create_time,u.nickname
+        FROM course_comment AS cm,USER AS u WHERE cm.user_Id=u.id AND course_id = #{courseId,jdbcType=INTEGER}
+    </select>
+
+    
+    <update id="updatePraiseNum" parameterType="cn.edu.gpnu.vo.CourseCommentVo">
+        update course_comment
+          set praise_num = #{courseCommentCustom.praiseNum,jdbcType=VARCHAR}
+          where id = #{courseCommentCustom.id,jdbcType=INTEGER}
+    </update>
+
+
+    <insert id="insertCourseComment" parameterType="cn.edu.gpnu.bean.CourseComment">
+        insert into course_comment (id,comment,praise_num,
+          create_time,user_id,course_id)
+        values (#{id,jdbcType=INTEGER},#{comment,jdbcType=VARCHAR},
+            #{praiseNum,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP},
+            #{userId,jdbcType=INTEGER},#{courseId,jdbcType=INTEGER})
+    </insert>
+
+
+
+
+
+</mapper>

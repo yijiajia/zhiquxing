@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.gpnu.dao.CourseMapper">
+
+    <resultMap id="BaseResultMap" type="cn.edu.gpnu.bean.Course">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="summary" jdbcType="VARCHAR" property="summary" />
+        <result column="picUrl" jdbcType="VARCHAR" property="picUrl"/>
+        <result column="videoUrl" jdbcType="VARCHAR" property="videoUrl"/>
+    </resultMap>
+
+    <select id="getCourseList" resultMap="BaseResultMap">
+        select * from course
+    </select>
+
+    <select id="getCourseById"  resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select * from course where id = #{id,jdbcType=INTEGER}
+    </select>
+
+
+</mapper>

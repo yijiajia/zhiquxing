@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document */
+body, form, p, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, li { margin: 0; padding: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { text-decoration: none; color: #666666; margin: 0; padding: 0; }
+a img { border: none; }
+body { font-size: 14px; background: #fff; color: #333333; min-width: 1200px;overflow-x:hidden;}
+h1, h2, h3, h4, h5, h6 { font-size: 14px;  font-weight: normal;}
+
+.w_1200 { width: 1200px; margin: 0 auto;}
+.w_1920{width:1920px;overflow:hidden;position:relative;left:50%;margin-left:-960px;}
+
+/**相关导航**/
+#about_nav{height:83px;text-align: center;font-size: 0;}
+#about_nav a{display: inline-block;font-size: 16px;color: #f7ac1d;width:109px;line-height: 34px; border:1px solid #f7ac1d;margin:22px 9px 0;border-radius: 9px}
+#about_nav>.curr{background: #f7ac1d;color: #fff;}
+.about_fzls>h2{font-size: 14px;color: #5d5d5d;text-align: right;margin-bottom: 30px}
+.about_fzls .aside{width:294px;float: right;}
+
+.News{height:372px;margin-top:40px;}
+
+/*新闻动态*/
+.news_list li{border-bottom: 1px solid #cbcbcb;padding:20px 0;}
+.news_list li:first-child{border-top: 1px solid #cbcbcb;}
+.news_list li>div{overflow: hidden;}
+.news_list li div.date,.news_list li a.thumb,.news_list li div.news_list_cont{float:left;}
+.news_list li div.date{width:110px;height:88px;box-sizing: border-box;border:1px solid #ed9c04;text-align: center;margin-top: 30px;}
+.news_list li div.date strong{display: block;line-height:46px;background: #fabd4a;color:#fff;font-size: 26px;}
+.news_list li div.date p{line-height:40px;background: #ed9c04;color: #e9e9e9;font-size: 18px;}
+.news_list li a.thumb{width:198px;height:150px;margin:0 30px;display: block;overflow: hidden;}
+.news_list li a.thumb:hover img{transform:scale(1.1);}
+.news_list li a.thumb img{width:198px;height:150px;transition:all .5s ease;transform: scale(1);}
+.news_list li div.news_list_cont{width:830px;height:150px;position: relative;}
+.news_list li div.news_list_cont h2{font-size: 18px;color: #7e7e7e;margin-bottom: 14px;}
+.news_list li div.news_list_cont h2>a{display: block;}
+.news_list li div.news_list_cont h2>a:hover{color: #FF9002;}
+.news_list li div.news_list_cont div{font-size: 14px;color: #646464}
+.news_list li div.news_list_cont>a{position: absolute;display: block;right:0;bottom:0;width:115px; line-height: 36px;background: #0c335c;color: #fff;font-size: 14px;text-align: center;}
+.news_list li div.news_list_cont>a:hover{background: #fabd4a}
+
+/**分页**/
+#pages{text-align: center;color: #666666;clear: both;margin-top: 40px}
+#pages a,#pages span{display: inline-block;padding:0 10px;line-height: 28px;border:1px solid #d8d8d8;margin:0 4px;border-radius: 6px}
+#pages a:first-child,#pages a:last-child{width:52px;}
+#pages span{background: #fabd4a;border:1px solid #fabd4a;color: #fff;}
+
+.fanye{margin-top: 60px;overflow: hidden;}
+.fanye div{width:auto;padding:0 12px;line-height:35px;text-align: center;font-size: 14px;color: #0b0707;background: #e3e3e3;}
+.fanye div a{color: inherit;}
+.fanye div:hover{background: #f7ac1d;}
+.prev_page{float:left;}
+.next_page{float:right;}
+
+
+
+/*新闻动态详情页面*/
+.news_list li{border-bottom: 1px solid #cbcbcb;padding:20px 0;}
+.news_list li:first-child{border-top: 1px solid #cbcbcb;}
+.news_list li>div{overflow: hidden;}
+.news_list li div.date,.news_list li a.thumb,.news_list li div.news_list_cont{float:left;}
+.news_list li div.date{width:110px;height:88px;box-sizing: border-box;border:1px solid #ed9c04;text-align: center;margin-top: 30px;}
+.news_list li div.date strong{display: block;line-height:46px;background: #fabd4a;color:#fff;font-size: 26px;}
+.news_list li div.date p{line-height:40px;background: #ed9c04;color: #e9e9e9;font-size: 18px;}
+.news_list li a.thumb{width:198px;height:150px;margin:0 30px;display: block;overflow: hidden;}
+.news_list li a.thumb:hover img{transform:scale(1.1);}
+.news_list li a.thumb img{width:198px;height:150px;transition:all .5s ease;transform: scale(1);}
+.news_list li div.news_list_cont{width:830px;height:150px;position: relative;}
+.news_list li div.news_list_cont h2{font-size: 18px;color: #7e7e7e;margin-bottom: 14px;}
+.news_list li div.news_list_cont h2>a{display: block;}
+.news_list li div.news_list_cont h2>a:hover{color: #FF9002;}
+.news_list li div.news_list_cont div{font-size: 14px;color: #646464}
+.news_list li div.news_list_cont>a{position: absolute;display: block;right:0;bottom:0;width:115px; line-height: 36px;background: #0c335c;color: #fff;font-size: 14px;text-align: center;}
+.news_list li div.news_list_cont>a:hover{background: #fabd4a}
+/*市场展示*/
+.show_market .show_market_title{text-align: center;}
+.show_market .show_market_title h2{font-size: 22px;color: #1a1a1a;line-height: 34px;}
+.show_market .show_market_title time{font-size: 14px;color: #464646;margin-right: 34px;line-height:40px}
+.show_market .show_market_title span{font-size: 14px;color: #464646;line-height:40px}
+
+/*å‘å±•åŽ†å²*/
+#about_nav{height:83px;text-align: center;font-size: 0;}
+#about_nav a{display: inline-block;font-size: 16px;color: #f7ac1d;width:109px;line-height: 34px; border:1px solid #f7ac1d;margin:22px 9px 0;border-radius: 9px}
+#about_nav>.curr{background: #f7ac1d;color: #fff;}
+.about_fzls>h2{font-size: 14px;color: #5d5d5d;text-align: right;margin-bottom: 30px}
+.about_fzls .aside{width:294px;float: right;}
+.about_fzls .aside h2{border-top: 1px solid #d2d2d2;line-height: 56px;margin-top: 20px;}
+.about_fzls .aside h2,.about_fzls .aside h2 a{font-size: 18px;color: #ea8010;}
+.about_fzls .aside h2 span{font-size: 14px;color: #353535}
+.about_fzls .aside h2 a{font-size: 14px; float:right;}
+.about_fzls .aside ul li a{color: #646464;font-size: 14px;line-height: 24px;}
+.about_fzls .aside ul li a span{float:right;}
+.about_fzls .aside a.lianjie{margin-top: 10px;display: block;}
+/*è”ç³»æˆ‘ä»¬*/
+.about_fzls .lianxi,.about_fzls .about_cont,.show_market{width:876px;float:left;}
+.about_fzls .lianxi ul li{height:174px;width:160px;text-align: center;font-size: 14px;color: #505050;float:left;margin-top: 40px;margin-left: 56px}
+.about_fzls .lianxi ul li:nth-of-type(1){margin-left: 0}
+.about_fzls .lianxi ul li h2{padding-top: 40px;line-height: 46px;}
+/*ä¼ä¸šæ¦‚å†µ*/
+.about_fzls .about_cont ul li{color:#fff;font-size: 14px;margin-bottom: 20px;overflow: hidden;}
+.about_fzls .about_cont ul li>img{width:313px;height:208px;float:left;}
+.about_fzls .about_cont ul li>div{width:560px;height:208px;float:left;box-sizing: border-box;padding:26px 50px;line-height: 24px;}
+.about_fzls .about_cont ul li:nth-of-type(2n)>img{float:right;}
